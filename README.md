@@ -4,6 +4,8 @@ A comprehensive task management system designed specifically for African Leaders
 
 **Live Demo:** https://obanijesu-ctrl.github.io/alu-campus-planner/
 
+**Video Demo:** https://youtu.be/IJi2GF1_8oM
+
 **Student Information:**
 - **Name:** Obanijesu Okunola
 - **Email:** okunolaobanijesu27@gmail.com
@@ -68,7 +70,6 @@ Each task includes:
 
 A comprehensive task management system designed specifically for African Leadership University students (Leaders). Built with vanilla HTML, CSS, and JavaScript.
 
-**Live Demo:** [Your GitHub Pages URL here]
 
 **Student Information:**
 - **Name:** Obanijesu Okunola
@@ -139,7 +140,6 @@ Each task includes:
 
 A comprehensive task management system designed specifically for African Leadership University students (Leaders). Built with vanilla HTML, CSS, and JavaScript.
 
-**Live Demo:** [Your GitHub Pages URL here]
 
 **Student Information:**
 - **Name:** Obanijesu Okunola
@@ -212,7 +212,6 @@ Each task includes:
 
 A comprehensive task management system designed specifically for African Leadership University students (Leaders). Built with vanilla HTML, CSS, and JavaScript.
 
-**Live Demo:** [Your GitHub Pages URL here]
 
 **Student Information:**
 - **Name:** Obanijesu Okunola
@@ -284,7 +283,6 @@ Each task includes:
 
 A comprehensive task management system designed specifically for African Leadership University students (Leaders). Built with vanilla HTML, CSS, and JavaScript.
 
-**Live Demo:** [Your GitHub Pages URL here]
 
 **Student Information:**
 - **Name:** Obanijesu Okunola
@@ -379,7 +377,6 @@ Each task includes:
 
 A comprehensive task management system designed specifically for African Leadership University students (Leaders). Built with vanilla HTML, CSS, and JavaScript.
 
-**Live Demo:** [Your GitHub Pages URL here]
 
 **Student Information:**
 - **Name:** Obanijesu Okunola
@@ -445,7 +442,6 @@ Each task includes:
 
 A comprehensive task management system designed specifically for African Leadership University students (Leaders). Built with vanilla HTML, CSS, and JavaScript.
 
-**Live Demo:** [Your GitHub Pages URL here]
 
 **Student Information:**
 - **Name:** Obanijesu Okunola
