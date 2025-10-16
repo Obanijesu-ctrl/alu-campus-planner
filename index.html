@@ -184,6 +184,16 @@
             border-radius: 4px;
             font-size: 1rem;
             transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        input[type="date"] {
+            cursor: pointer;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            cursor: pointer;
+            padding: 4px;
         }
 
         input:focus, select:focus, textarea:focus {
@@ -438,15 +448,20 @@
         footer {
             background: var(--text);
             color: white;
-            padding: 2rem 0;
+            padding: 1rem 0;
             margin-top: 4rem;
+            text-align: center;
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
-            text-align: center;
+        }
+
+        .footer-content p {
+            font-size: 0.875rem;
+            opacity: 0.9;
         }
 
         .about-content {
@@ -592,10 +607,7 @@
     <header>
         <div class="header-content">
             <div style="display: flex; align-items: center; gap: 1rem;">
-                <svg width="50" height="50" viewBox="0 0 100 100" style="background: white; border-radius: 4px; padding: 4px;">
-                    <circle cx="50" cy="50" r="40" fill="#1e3a8a"/>
-                    <text x="50" y="60" font-size="40" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">A</text>
-                </svg>
+                <div style="width: 50px; height: 50px; background: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.5rem; color: #1e3a8a;">ALU</div>
                 <div class="logo">
                     ALU Campus Life Planner
                     <small>African Leadership University</small>
@@ -719,9 +731,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="dueDate">Due Date (YYYY-MM-DD) *</label>
-                        <input type="text" id="dueDate" required aria-required="true" aria-describedby="date-error" placeholder="2025-10-20">
-                        <div class="error-message" id="date-error" role="alert"></div>
+                        <label for="dueDate">Due Date *</label>
+                        <input type="date" id="dueDate" required aria-required="true" aria-describedby="dueDate-error">
+                        <div class="error-message" id="dueDate-error" role="alert"></div>
+                        <small style="color: var(--text-light); font-size: 0.875rem;">Select a date or type in YYYY-MM-DD format</small>
                     </div>
 
                     <div class="form-group">
@@ -737,7 +750,7 @@
                     </div>
 
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <button type="submit" class="btn btn-primary">Save Task</button>
+                        <button type="submit" class="btn btn-primary" id="save-task-btn">Save Task</button>
                         <button type="button" class="btn btn-secondary" id="cancel-edit">Cancel</button>
                     </div>
                 </form>
@@ -846,7 +859,6 @@
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 ALU Campus Life Planner. Built for African Leadership University Leaders.</p>
-            <p>Empowering leaders to organize, achieve, and transform Africa.</p>
         </div>
     </footer>
 
@@ -939,7 +951,13 @@
                             return { valid: true };
 
                         case 'dueDate':
-                            if (!this.patterns.date.test(value)) {
+                        case 'date':
+                            // For date input type="date", browser provides YYYY-MM-DD format
+                            if (!value) {
+                                return { valid: false, message: 'Please select a date' };
+                            }
+                            // Validate format if manually typed
+                            if (value.length === 10 && !this.patterns.date.test(value)) {
                                 return { valid: false, message: 'Use format YYYY-MM-DD (e.g., 2025-10-20)' };
                             }
                             const date = new Date(value);
@@ -1174,10 +1192,24 @@
 
                 setupForm() {
                     const form = document.getElementById('task-form');
+                    if (!form) {
+                        console.error('Form not found');
+                        return;
+                    }
+
+                    console.log('Setting up form...');
+
                     const inputs = ['title', 'dueDate', 'duration', 'tag'];
 
                     inputs.forEach(field => {
                         const input = document.getElementById(field);
+                        if (!input) {
+                            console.error(`Input not found: ${field}`);
+                            return;
+                        }
+                        
+                        console.log(`Attached listeners to: ${field}`);
+                        
                         input.addEventListener('blur', () => this.validateField(field));
                         input.addEventListener('input', () => {
                             if (input.classList.contains('error')) {
@@ -1186,23 +1218,51 @@
                         });
                     });
 
+                    // Form submission
                     form.addEventListener('submit', (e) => {
+                        console.log('=== FORM SUBMIT EVENT FIRED ===');
                         e.preventDefault();
                         e.stopPropagation();
-                        console.log('Form submitted'); // Debug log
                         this.handleSubmit();
                         return false;
                     });
 
-                    document.getElementById('cancel-edit').addEventListener('click', (e) => {
-                        e.preventDefault();
-                        this.resetForm();
-                    });
+                    // Also add click handler to button as backup
+                    const saveBtn = document.getElementById('save-task-btn');
+                    if (saveBtn) {
+                        console.log('Save button found, attaching click handler');
+                        saveBtn.addEventListener('click', (e) => {
+                            console.log('=== SAVE BUTTON CLICKED ===');
+                            e.preventDefault();
+                            this.handleSubmit();
+                        });
+                    }
+
+                    const cancelBtn = document.getElementById('cancel-edit');
+                    if (cancelBtn) {
+                        cancelBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            this.resetForm();
+                        });
+                    }
+
+                    console.log('Form setup complete');
                 },
 
                 validateField(field) {
                     const input = document.getElementById(field);
                     const errorEl = document.getElementById(`${field}-error`);
+                    
+                    if (!input) {
+                        console.error(`Input element not found: ${field}`);
+                        return true; // Don't block submission if element doesn't exist
+                    }
+                    
+                    if (!errorEl) {
+                        console.error(`Error element not found: ${field}-error`);
+                        return true; // Don't block submission if error element doesn't exist
+                    }
+
                     const result = Validators.validate(field, input.value);
 
                     if (result.valid) {
@@ -1219,57 +1279,98 @@
                 },
 
                 handleSubmit() {
+                    console.log('=== handleSubmit called ===');
+                    
                     const fields = ['title', 'dueDate', 'duration', 'tag'];
                     let isValid = true;
 
+                    console.log('Validating fields...');
                     fields.forEach(field => {
-                        if (!this.validateField(field)) {
+                        const valid = this.validateField(field);
+                        console.log(`${field}: ${valid ? 'VALID' : 'INVALID'}`);
+                        if (!valid) {
                             isValid = false;
                         }
                     });
 
                     if (!isValid) {
+                        console.log('Validation failed, stopping submission');
                         this.showStatus('Please fix all errors before submitting', 'error');
                         return;
                     }
 
+                    console.log('All fields valid, collecting data...');
+
+                    const titleEl = document.getElementById('title');
+                    const dateEl = document.getElementById('dueDate');
+                    const durationEl = document.getElementById('duration');
+                    const tagEl = document.getElementById('tag');
+
+                    if (!titleEl || !dateEl || !durationEl || !tagEl) {
+                        console.error('Form elements not found');
+                        this.showStatus('Error: Form elements not found', 'error');
+                        return;
+                    }
+
                     const task = {
-                        title: document.getElementById('title').value.trim(),
-                        dueDate: document.getElementById('dueDate').value,
-                        duration: document.getElementById('duration').value,
-                        tag: document.getElementById('tag').value.trim()
+                        title: titleEl.value.trim(),
+                        dueDate: dateEl.value.trim(),
+                        duration: durationEl.value.trim(),
+                        tag: tagEl.value.trim()
                     };
 
-                    const editId = document.getElementById('edit-id').value;
+                    console.log('Task data:', task);
+
+                    const editId = document.getElementById('edit-id')?.value;
                     if (editId) {
+                        console.log('Updating existing task:', editId);
                         State.update(editId, task);
                         this.showStatus('Task updated successfully!', 'success');
                     } else {
-                        State.add(task);
+                        console.log('Adding new task');
+                        const newTask = State.add(task);
+                        console.log('New task created:', newTask);
                         this.showStatus('Task added successfully!', 'success');
                     }
 
+                    console.log('Resetting form and updating UI...');
                     this.resetForm();
                     this.updateDashboard();
                     this.renderTasks();
                     
-                    // Automatically switch to Tasks view to see the new task
+                    console.log('Switching to tasks view in 1.5s...');
                     setTimeout(() => {
                         this.showSection('tasks');
+                        console.log('Switched to tasks view');
                     }, 1500);
                 },
 
                 resetForm() {
-                    document.getElementById('task-form').reset();
-                    document.getElementById('edit-id').value = '';
-                    document.getElementById('form-title').textContent = 'Add New Task';
+                    const form = document.getElementById('task-form');
+                    if (form) {
+                        form.reset();
+                    }
+                    
+                    const editIdEl = document.getElementById('edit-id');
+                    if (editIdEl) {
+                        editIdEl.value = '';
+                    }
+                    
+                    const formTitle = document.getElementById('form-title');
+                    if (formTitle) {
+                        formTitle.textContent = 'Add New Task';
+                    }
                     
                     ['title', 'dueDate', 'duration', 'tag'].forEach(field => {
                         const input = document.getElementById(field);
                         const errorEl = document.getElementById(`${field}-error`);
-                        input.classList.remove('error');
-                        errorEl.classList.remove('visible');
-                        errorEl.textContent = '';
+                        if (input) {
+                            input.classList.remove('error');
+                        }
+                        if (errorEl) {
+                            errorEl.classList.remove('visible');
+                            errorEl.textContent = '';
+                        }
                     });
 
                     State.editingId = null;
@@ -1686,6 +1787,11 @@
 
                 showStatus(message, type) {
                     const status = document.getElementById('status-message');
+                    if (!status) {
+                        console.error('Status element not found');
+                        return;
+                    }
+                    
                     status.className = `status-message visible status-${type}`;
                     status.textContent = message;
                     
@@ -1706,10 +1812,19 @@
             };
 
             // === INITIALIZATION ===
-            State.init();
-            UI.init();
-            UI.updateDashboard();
-            UI.renderTasks();
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('DOM Content Loaded - Initializing app...');
+                
+                try {
+                    State.init();
+                    UI.init();
+                    UI.updateDashboard();
+                    UI.renderTasks();
+                    console.log('App initialized successfully');
+                } catch (error) {
+                    console.error('Initialization error:', error);
+                }
+            });
         })();
     </script>
 </body>
