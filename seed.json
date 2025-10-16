@@ -109,7 +109,7 @@
   },
   {
     "id": "task_13",
-    "title": "Submit Capstone Proposal Draft Draft",
+    "title": "Submit Capstone Proposal",
     "dueDate": "2024-12-31",
     "duration": 8.75,
     "tag": "Academic",
@@ -133,5 +133,32 @@
     "tag": "Professional-Growth",
     "createdAt": "2025-09-28T09:15:00.000Z",
     "updatedAt": "2025-10-14T11:20:00.000Z"
+  },
+  {
+    "id": "task_16",
+    "title": "Prepare for Midterm Exams",
+    "dueDate": "2025-10-30",
+    "duration": 12.5,
+    "tag": "Academic",
+    "createdAt": "2025-10-08T14:20:00.000Z",
+    "updatedAt": "2025-10-08T14:20:00.000Z"
+  },
+  {
+    "id": "task_17",
+    "title": "Coffee with Mentor",
+    "dueDate": "2025-10-25",
+    "duration": 0.75,
+    "tag": "Networking",
+    "createdAt": "2025-10-09T09:30:00.000Z",
+    "updatedAt": "2025-10-09T09:30:00.000Z"
+  },
+  {
+    "id": "task_18",
+    "title": "Debug JavaScript errors in project",
+    "dueDate": "2025-10-19",
+    "duration": 4.25,
+    "tag": "Technical",
+    "createdAt": "2025-10-10T16:00:00.000Z",
+    "updatedAt": "2025-10-10T16:00:00.000Z"
   }
 ]
