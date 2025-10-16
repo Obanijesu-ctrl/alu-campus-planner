@@ -1,5 +1,70 @@
-# alu-campus-planner
+# ALU Campus Life Planner
 
+A comprehensive task management system designed specifically for African Leadership University students (Leaders). Built with vanilla HTML, CSS, and JavaScript.
+
+**Live Demo:** https://obanijesu-ctrl.github.io/alu-campus-planner/
+
+**Student Information:**
+- **Name:** Obanijesu Okunola
+- **Email:** okunolaobanijesu27@gmail.com
+- **GitHub:** [@Obanijesu_ctrl](https://github.com/Obanijesu_ctrl)
+
+---
+
+## 📋 Table of Contents
+- [Features](#features)
+- [Theme](#theme)
+- [Regex Catalog](#regex-catalog)
+- [Keyboard Navigation](#keyboard-navigation)
+- [Accessibility Notes](#accessibility-notes)
+- [How to Use](#how-to-use)
+- [How to Run Tests](#how-to-run-tests)
+- [Deployment Guide](#deployment-guide)
+- [File Structure](#file-structure)
+
+---
+
+## ✨ Features
+
+### Core Functionality
+- ✅ **Task Management**: Add, edit, delete tasks with validation
+- ✅ **Duration Tracking**: Track time spent on each task (in hours)
+- ✅ **Tag System**: Organize tasks by categories (Academic, Leadership, Wellness, etc.)
+- ✅ **Advanced Search**: Regex-powered search with highlighting
+- ✅ **Sorting**: Sort by title, date, or duration (ascending/descending)
+- ✅ **Data Persistence**: Auto-save to localStorage
+- ✅ **Import/Export**: JSON data backup and restore
+- ✅ **Stats Dashboard**: Visual 7-day activity chart and favorites
+
+### Advanced Features
+- ✅ **Duration Cap**: Set weekly hour limits with live status updates
+- ✅ **Time Conversion**: Convert minutes to hours
+- ✅ **Personalized Greeting**: Customizable welcome message
+- ✅ **Responsive Design**: Mobile-first (360px, 768px, 1024px breakpoints)
+- ✅ **Full Accessibility**: Keyboard navigation, ARIA live regions, semantic HTML
+- ✅ **Sample Data**: Load 12 pre-configured tasks for testing
+
+---
+
+## 🎨 Theme
+
+**Campus Life Planner** - A productivity tool for university students to manage academic tasks, events, leadership activities, wellness goals, and collaborative projects.
+
+**Data Model:**
+Each task includes:
+- `id`: Unique identifier (e.g., "task_1234567890")
+- `title`: Task name/description
+- `dueDate`: Due date in YYYY-MM-DD format
+- `duration`: Time required in hours (supports decimals)
+- `tag`: Category/type (Academic, Leadership, Collaboration, etc.)
+- `createdAt`: ISO timestamp of creation
+- `updatedAt`: ISO timestamp of last modification
+
+---
+
+## 🔍 Regex Catalog
+
+### 1. **Title Validation** - `^\S(?:.*\S)?# ALU Campus Life Planner
 
 A comprehensive task management system designed specifically for African Leadership University students (Leaders). Built with vanilla HTML, CSS, and JavaScript.
 
@@ -63,16 +128,78 @@ Each task includes:
 
 ---
 
-## 🔍 Regex Catalog
 
-### 1. **Title Validation** - `^\S(?:.*\S)?$`
 **Purpose:** No leading/trailing spaces  
 **Examples:**
 - ✅ `"Complete Assignment"` → Valid
 - ❌ `" Extra Space"` → Invalid
 - ❌ `"Trailing Space "` → Invalid
 
-### 2. **Duration Validation** - `^(0|[1-9]\d*)(\.\d{1,2})?$`
+### 2. **Duration Validation** - `^(0|[1-9]\d*)(\.\d{1,2})?# ALU Campus Life Planner
+
+A comprehensive task management system designed specifically for African Leadership University students (Leaders). Built with vanilla HTML, CSS, and JavaScript.
+
+**Live Demo:** [Your GitHub Pages URL here]
+
+**Student Information:**
+- **Name:** Obanijesu Okunola
+- **Email:** okunolaobanijesu27@gmail.com
+- **GitHub:** [@Obanijesu_ctrl](https://github.com/Obanijesu_ctrl)
+
+---
+
+## 📋 Table of Contents
+- [Features](#features)
+- [Theme](#theme)
+- [Regex Catalog](#regex-catalog)
+- [Keyboard Navigation](#keyboard-navigation)
+- [Accessibility Notes](#accessibility-notes)
+- [How to Use](#how-to-use)
+- [How to Run Tests](#how-to-run-tests)
+- [Deployment Guide](#deployment-guide)
+- [File Structure](#file-structure)
+
+---
+
+## ✨ Features
+
+### Core Functionality
+- ✅ **Task Management**: Add, edit, delete tasks with validation
+- ✅ **Duration Tracking**: Track time spent on each task (in hours)
+- ✅ **Tag System**: Organize tasks by categories (Academic, Leadership, Wellness, etc.)
+- ✅ **Advanced Search**: Regex-powered search with highlighting
+- ✅ **Sorting**: Sort by title, date, or duration (ascending/descending)
+- ✅ **Data Persistence**: Auto-save to localStorage
+- ✅ **Import/Export**: JSON data backup and restore
+- ✅ **Stats Dashboard**: Visual 7-day activity chart and favorites
+
+### Advanced Features
+- ✅ **Duration Cap**: Set weekly hour limits with live status updates
+- ✅ **Time Conversion**: Convert minutes to hours
+- ✅ **Personalized Greeting**: Customizable welcome message
+- ✅ **Responsive Design**: Mobile-first (360px, 768px, 1024px breakpoints)
+- ✅ **Full Accessibility**: Keyboard navigation, ARIA live regions, semantic HTML
+- ✅ **Sample Data**: Load 12 pre-configured tasks for testing
+
+---
+
+## 🎨 Theme
+
+**Campus Life Planner** - A productivity tool for university students to manage academic tasks, events, leadership activities, wellness goals, and collaborative projects.
+
+**Data Model:**
+Each task includes:
+- `id`: Unique identifier (e.g., "task_1234567890")
+- `title`: Task name/description
+- `dueDate`: Due date in YYYY-MM-DD format
+- `duration`: Time required in hours (supports decimals)
+- `tag`: Category/type (Academic, Leadership, Collaboration, etc.)
+- `createdAt`: ISO timestamp of creation
+- `updatedAt`: ISO timestamp of last modification
+
+---
+
+
 **Purpose:** Valid numeric hours (0 or positive, up to 2 decimals)  
 **Examples:**
 - ✅ `2` → Valid (2 hours)
@@ -81,7 +208,71 @@ Each task includes:
 - ❌ `02` → Invalid (leading zero)
 - ❌ `2.555` → Invalid (too many decimals)
 
-### 3. **Date Validation** - `^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$`
+### 3. **Date Validation** - `^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])# ALU Campus Life Planner
+
+A comprehensive task management system designed specifically for African Leadership University students (Leaders). Built with vanilla HTML, CSS, and JavaScript.
+
+**Live Demo:** [Your GitHub Pages URL here]
+
+**Student Information:**
+- **Name:** Obanijesu Okunola
+- **Email:** okunolaobanijesu27@gmail.com
+- **GitHub:** [@Obanijesu_ctrl](https://github.com/Obanijesu_ctrl)
+
+---
+
+## 📋 Table of Contents
+- [Features](#features)
+- [Theme](#theme)
+- [Regex Catalog](#regex-catalog)
+- [Keyboard Navigation](#keyboard-navigation)
+- [Accessibility Notes](#accessibility-notes)
+- [How to Use](#how-to-use)
+- [How to Run Tests](#how-to-run-tests)
+- [Deployment Guide](#deployment-guide)
+- [File Structure](#file-structure)
+
+---
+
+## ✨ Features
+
+### Core Functionality
+- ✅ **Task Management**: Add, edit, delete tasks with validation
+- ✅ **Duration Tracking**: Track time spent on each task (in hours)
+- ✅ **Tag System**: Organize tasks by categories (Academic, Leadership, Wellness, etc.)
+- ✅ **Advanced Search**: Regex-powered search with highlighting
+- ✅ **Sorting**: Sort by title, date, or duration (ascending/descending)
+- ✅ **Data Persistence**: Auto-save to localStorage
+- ✅ **Import/Export**: JSON data backup and restore
+- ✅ **Stats Dashboard**: Visual 7-day activity chart and favorites
+
+### Advanced Features
+- ✅ **Duration Cap**: Set weekly hour limits with live status updates
+- ✅ **Time Conversion**: Convert minutes to hours
+- ✅ **Personalized Greeting**: Customizable welcome message
+- ✅ **Responsive Design**: Mobile-first (360px, 768px, 1024px breakpoints)
+- ✅ **Full Accessibility**: Keyboard navigation, ARIA live regions, semantic HTML
+- ✅ **Sample Data**: Load 12 pre-configured tasks for testing
+
+---
+
+## 🎨 Theme
+
+**Campus Life Planner** - A productivity tool for university students to manage academic tasks, events, leadership activities, wellness goals, and collaborative projects.
+
+**Data Model:**
+Each task includes:
+- `id`: Unique identifier (e.g., "task_1234567890")
+- `title`: Task name/description
+- `dueDate`: Due date in YYYY-MM-DD format
+- `duration`: Time required in hours (supports decimals)
+- `tag`: Category/type (Academic, Leadership, Collaboration, etc.)
+- `createdAt`: ISO timestamp of creation
+- `updatedAt`: ISO timestamp of last modification
+
+---
+
+
 **Purpose:** Valid date in YYYY-MM-DD format  
 **Examples:**
 - ✅ `2025-10-16` → Valid
@@ -89,7 +280,71 @@ Each task includes:
 - ❌ `2025-13-01` → Invalid (month > 12)
 - ❌ `2025/10/16` → Invalid (wrong separator)
 
-### 4. **Tag Validation** - `^[A-Za-z]+(?:[ -][A-Za-z]+)*$`
+### 4. **Tag Validation** - `^[A-Za-z]+(?:[ -][A-Za-z]+)*# ALU Campus Life Planner
+
+A comprehensive task management system designed specifically for African Leadership University students (Leaders). Built with vanilla HTML, CSS, and JavaScript.
+
+**Live Demo:** [Your GitHub Pages URL here]
+
+**Student Information:**
+- **Name:** Obanijesu Okunola
+- **Email:** okunolaobanijesu27@gmail.com
+- **GitHub:** [@Obanijesu_ctrl](https://github.com/Obanijesu_ctrl)
+
+---
+
+## 📋 Table of Contents
+- [Features](#features)
+- [Theme](#theme)
+- [Regex Catalog](#regex-catalog)
+- [Keyboard Navigation](#keyboard-navigation)
+- [Accessibility Notes](#accessibility-notes)
+- [How to Use](#how-to-use)
+- [How to Run Tests](#how-to-run-tests)
+- [Deployment Guide](#deployment-guide)
+- [File Structure](#file-structure)
+
+---
+
+## ✨ Features
+
+### Core Functionality
+- ✅ **Task Management**: Add, edit, delete tasks with validation
+- ✅ **Duration Tracking**: Track time spent on each task (in hours)
+- ✅ **Tag System**: Organize tasks by categories (Academic, Leadership, Wellness, etc.)
+- ✅ **Advanced Search**: Regex-powered search with highlighting
+- ✅ **Sorting**: Sort by title, date, or duration (ascending/descending)
+- ✅ **Data Persistence**: Auto-save to localStorage
+- ✅ **Import/Export**: JSON data backup and restore
+- ✅ **Stats Dashboard**: Visual 7-day activity chart and favorites
+
+### Advanced Features
+- ✅ **Duration Cap**: Set weekly hour limits with live status updates
+- ✅ **Time Conversion**: Convert minutes to hours
+- ✅ **Personalized Greeting**: Customizable welcome message
+- ✅ **Responsive Design**: Mobile-first (360px, 768px, 1024px breakpoints)
+- ✅ **Full Accessibility**: Keyboard navigation, ARIA live regions, semantic HTML
+- ✅ **Sample Data**: Load 12 pre-configured tasks for testing
+
+---
+
+## 🎨 Theme
+
+**Campus Life Planner** - A productivity tool for university students to manage academic tasks, events, leadership activities, wellness goals, and collaborative projects.
+
+**Data Model:**
+Each task includes:
+- `id`: Unique identifier (e.g., "task_1234567890")
+- `title`: Task name/description
+- `dueDate`: Due date in YYYY-MM-DD format
+- `duration`: Time required in hours (supports decimals)
+- `tag`: Category/type (Academic, Leadership, Collaboration, etc.)
+- `createdAt`: ISO timestamp of creation
+- `updatedAt`: ISO timestamp of last modification
+
+---
+
+
 **Purpose:** Letters, spaces, and hyphens only  
 **Examples:**
 - ✅ `Academic` → Valid
@@ -105,12 +360,167 @@ Each task includes:
 - ❌ `"The the assignment"` → Invalid (duplicate "the")
 - ✅ `"Study hard for exams"` → Valid
 
-### Search Patterns
-Users can search with custom regex patterns:
-- `^Study` → Tasks starting with "Study"
-- `@tag:Academic` → Special filter syntax
-- `\d{2}:\d{2}` → Find time patterns (e.g., "14:30")
-- `book|meeting` → Tasks containing "book" OR "meeting"
+---
+
+## 🧪 5 Regex Search Patterns to Test
+
+### Test Pattern 1: Start with "Book"
+**Pattern:** `^Book`  
+**Expected Results:** Finds "Book office hours with Wakuma"  
+**Try it:** Go to Tasks → Search → Type `^Book` → Click Search
+
+### Test Pattern 2: Contains "Project"
+**Pattern:** `Project`  
+**Expected Results:** Finds "Team Project Meeting", "Community Service Project"  
+**Try it:** Search for `Project` (case-insensitive by default)
+
+### Test Pattern 3: Ends with "notes"
+**Pattern:** `notes# ALU Campus Life Planner
+
+A comprehensive task management system designed specifically for African Leadership University students (Leaders). Built with vanilla HTML, CSS, and JavaScript.
+
+**Live Demo:** [Your GitHub Pages URL here]
+
+**Student Information:**
+- **Name:** Obanijesu Okunola
+- **Email:** okunolaobanijesu27@gmail.com
+- **GitHub:** [@Obanijesu_ctrl](https://github.com/Obanijesu_ctrl)
+
+---
+
+## 📋 Table of Contents
+- [Features](#features)
+- [Theme](#theme)
+- [Regex Catalog](#regex-catalog)
+- [Keyboard Navigation](#keyboard-navigation)
+- [Accessibility Notes](#accessibility-notes)
+- [How to Use](#how-to-use)
+- [How to Run Tests](#how-to-run-tests)
+- [Deployment Guide](#deployment-guide)
+- [File Structure](#file-structure)
+
+---
+
+## ✨ Features
+
+### Core Functionality
+- ✅ **Task Management**: Add, edit, delete tasks with validation
+- ✅ **Duration Tracking**: Track time spent on each task (in hours)
+- ✅ **Tag System**: Organize tasks by categories (Academic, Leadership, Wellness, etc.)
+- ✅ **Advanced Search**: Regex-powered search with highlighting
+- ✅ **Sorting**: Sort by title, date, or duration (ascending/descending)
+- ✅ **Data Persistence**: Auto-save to localStorage
+- ✅ **Import/Export**: JSON data backup and restore
+- ✅ **Stats Dashboard**: Visual 7-day activity chart and favorites
+
+### Advanced Features
+- ✅ **Duration Cap**: Set weekly hour limits with live status updates
+- ✅ **Time Conversion**: Convert minutes to hours
+- ✅ **Personalized Greeting**: Customizable welcome message
+- ✅ **Responsive Design**: Mobile-first (360px, 768px, 1024px breakpoints)
+- ✅ **Full Accessibility**: Keyboard navigation, ARIA live regions, semantic HTML
+- ✅ **Sample Data**: Load 12 pre-configured tasks for testing
+
+---
+
+## 🎨 Theme
+
+**Campus Life Planner** - A productivity tool for university students to manage academic tasks, events, leadership activities, wellness goals, and collaborative projects.
+
+**Data Model:**
+Each task includes:
+- `id`: Unique identifier (e.g., "task_1234567890")
+- `title`: Task name/description
+- `dueDate`: Due date in YYYY-MM-DD format
+- `duration`: Time required in hours (supports decimals)
+- `tag`: Category/type (Academic, Leadership, Collaboration, etc.)
+- `createdAt`: ISO timestamp of creation
+- `updatedAt`: ISO timestamp of last modification
+
+---
+
+  
+**Expected Results:** Finds "Review Frontend notes"  
+**Try it:** Search for `notes# ALU Campus Life Planner
+
+A comprehensive task management system designed specifically for African Leadership University students (Leaders). Built with vanilla HTML, CSS, and JavaScript.
+
+**Live Demo:** [Your GitHub Pages URL here]
+
+**Student Information:**
+- **Name:** Obanijesu Okunola
+- **Email:** okunolaobanijesu27@gmail.com
+- **GitHub:** [@Obanijesu_ctrl](https://github.com/Obanijesu_ctrl)
+
+---
+
+## 📋 Table of Contents
+- [Features](#features)
+- [Theme](#theme)
+- [Regex Catalog](#regex-catalog)
+- [Keyboard Navigation](#keyboard-navigation)
+- [Accessibility Notes](#accessibility-notes)
+- [How to Use](#how-to-use)
+- [How to Run Tests](#how-to-run-tests)
+- [Deployment Guide](#deployment-guide)
+- [File Structure](#file-structure)
+
+---
+
+## ✨ Features
+
+### Core Functionality
+- ✅ **Task Management**: Add, edit, delete tasks with validation
+- ✅ **Duration Tracking**: Track time spent on each task (in hours)
+- ✅ **Tag System**: Organize tasks by categories (Academic, Leadership, Wellness, etc.)
+- ✅ **Advanced Search**: Regex-powered search with highlighting
+- ✅ **Sorting**: Sort by title, date, or duration (ascending/descending)
+- ✅ **Data Persistence**: Auto-save to localStorage
+- ✅ **Import/Export**: JSON data backup and restore
+- ✅ **Stats Dashboard**: Visual 7-day activity chart and favorites
+
+### Advanced Features
+- ✅ **Duration Cap**: Set weekly hour limits with live status updates
+- ✅ **Time Conversion**: Convert minutes to hours
+- ✅ **Personalized Greeting**: Customizable welcome message
+- ✅ **Responsive Design**: Mobile-first (360px, 768px, 1024px breakpoints)
+- ✅ **Full Accessibility**: Keyboard navigation, ARIA live regions, semantic HTML
+- ✅ **Sample Data**: Load 12 pre-configured tasks for testing
+
+---
+
+## 🎨 Theme
+
+**Campus Life Planner** - A productivity tool for university students to manage academic tasks, events, leadership activities, wellness goals, and collaborative projects.
+
+**Data Model:**
+Each task includes:
+- `id`: Unique identifier (e.g., "task_1234567890")
+- `title`: Task name/description
+- `dueDate`: Due date in YYYY-MM-DD format
+- `duration`: Time required in hours (supports decimals)
+- `tag`: Category/type (Academic, Leadership, Collaboration, etc.)
+- `createdAt`: ISO timestamp of creation
+- `updatedAt`: ISO timestamp of last modification
+
+---
+
+ 
+
+### Test Pattern 4: Tag filter pattern
+**Pattern:** `Leadership|Collaboration`  
+**Expected Results:** Finds all tasks tagged with Leadership OR Collaboration  
+**Try it:** Search for `Leadership|Collaboration`
+
+### Test Pattern 5: Find numbers (durations in text)
+**Pattern:** `\d+`  
+**Expected Results:** Matches any task title containing numbers  
+**Try it:** Search for `\d+`
+
+### Bonus: Invalid Pattern Test
+**Pattern:** `[invalid`  
+**Expected Results:** Should show error "Invalid regex pattern"  
+**Try it:** Search for `[invalid` (missing closing bracket)
 
 ---
 
@@ -418,6 +828,120 @@ This project uses a **single HTML file** with embedded CSS and JavaScript:
 - ✅ No external dependencies
 - ✅ Works offline after first load
 - ✅ Perfect for GitHub Pages
+
+## 🚀 Stretch Features (Bonus - Extra Credit)
+
+### Implemented:
+None currently - room for future enhancements
+
+### Available for Implementation:
+
+#### 1. **Offline-First (Service Worker Caching)**
+**What it does:** App works without internet after first load  
+**How to implement:**
+- Create `service-worker.js` file
+- Cache all static assets (HTML, CSS, JS)
+- Intercept network requests
+- Serve from cache when offline
+
+**Code snippet:**
+```javascript
+// service-worker.js
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open('alu-v1').then((cache) => {
+      return cache.addAll(['/index.html', '/styles.css', '/app.js']);
+    })
+  );
+});
+
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
+  );
+});
+```
+
+#### 2. **Light/Dark Theme Toggle (Persisted)**
+**What it does:** Users can switch between light and dark modes  
+**How to implement:**
+- Add theme toggle button in header
+- Define dark mode CSS variables
+- Save preference to localStorage
+- Apply on page load
+
+**Code snippet:**
+```css
+[data-theme="dark"] {
+  --bg: #1a1a1a;
+  --surface: #2d2d2d;
+  --text: #ffffff;
+  --border: #404040;
+}
+```
+
+#### 3. **CSV Export (Properly Escaped)**
+**What it does:** Export tasks as CSV file for Excel/Sheets  
+**How to implement:**
+- Convert task array to CSV format
+- Escape commas, quotes, newlines
+- Create downloadable file
+
+**Code snippet:**
+```javascript
+function exportCSV(tasks) {
+  const headers = ['Title', 'Due Date', 'Duration', 'Tag'];
+  const rows = tasks.map(t => [
+    `"${t.title.replace(/"/g, '""')}"`,
+    t.dueDate,
+    t.duration,
+    `"${t.tag}"`
+  ]);
+  const csv = [headers, ...rows].map(r => r.join(',')).join('\n');
+  // Download logic...
+}
+```
+
+#### 4. **Mini jQuery Scraping Page**
+**What it does:** Parse HTML and extract data to JSON  
+**How to implement:**
+- Create separate `scraper.html` page
+- Load jQuery from CDN
+- Use selectors to extract data
+- Display JSON output
+
+**Example:**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML Scraper</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <textarea id="html-input" placeholder="Paste HTML here"></textarea>
+  <button id="parse">Parse</button>
+  <pre id="output"></pre>
+  
+  <script>
+    $('#parse').click(function() {
+      const html = $('#html-input').val();
+      const $parsed = $(html);
+      const data = [];
+      $parsed.find('.task').each(function() {
+        data.push({
+          title: $(this).find('.title').text(),
+          date: $(this).find('.date').text()
+        });
+      });
+      $('#output').text(JSON.stringify(data, null, 2));
+    });
+  </script>
+</body>
+</html>
+```
 
 ---
 
