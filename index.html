@@ -592,7 +592,10 @@
     <header>
         <div class="header-content">
             <div style="display: flex; align-items: center; gap: 1rem;">
-                <img src="https://www.alueducation.com/wp-content/uploads/2023/01/cropped-ALU-Icon-192x192.png" alt="ALU Logo" style="width: 50px; height: 50px;">
+                <svg width="50" height="50" viewBox="0 0 100 100" style="background: white; border-radius: 4px; padding: 4px;">
+                    <circle cx="50" cy="50" r="40" fill="#1e3a8a"/>
+                    <text x="50" y="60" font-size="40" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">A</text>
+                </svg>
                 <div class="logo">
                     ALU Campus Life Planner
                     <small>African Leadership University</small>
@@ -1000,13 +1003,17 @@
                 add(task) {
                     const newTask = {
                         id: 'task_' + Date.now(),
-                        ...task,
+                        title: task.title,
+                        dueDate: task.dueDate,
+                        duration: parseFloat(task.duration),
+                        tag: task.tag,
                         createdAt: new Date().toISOString(),
                         updatedAt: new Date().toISOString()
                     };
                     this.tasks.push(newTask);
                     this.filteredTasks = [...this.tasks];
                     Storage.save(this.tasks);
+                    console.log('Task added:', newTask); // Debug log
                     return newTask;
                 },
 
@@ -1181,10 +1188,14 @@
 
                     form.addEventListener('submit', (e) => {
                         e.preventDefault();
+                        e.stopPropagation();
+                        console.log('Form submitted'); // Debug log
                         this.handleSubmit();
+                        return false;
                     });
 
-                    document.getElementById('cancel-edit').addEventListener('click', () => {
+                    document.getElementById('cancel-edit').addEventListener('click', (e) => {
+                        e.preventDefault();
                         this.resetForm();
                     });
                 },
@@ -1225,7 +1236,7 @@
                     const task = {
                         title: document.getElementById('title').value.trim(),
                         dueDate: document.getElementById('dueDate').value,
-                        duration: parseFloat(document.getElementById('duration').value),
+                        duration: document.getElementById('duration').value,
                         tag: document.getElementById('tag').value.trim()
                     };
 
@@ -1241,6 +1252,11 @@
                     this.resetForm();
                     this.updateDashboard();
                     this.renderTasks();
+                    
+                    // Automatically switch to Tasks view to see the new task
+                    setTimeout(() => {
+                        this.showSection('tasks');
+                    }, 1500);
                 },
 
                 resetForm() {
